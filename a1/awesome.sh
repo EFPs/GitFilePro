@@ -7,34 +7,30 @@ k=$2
 
 intCheck="$k |grep '/[0-9]+'"
 
-# if [ "$2"=="" ];
-# then
-#   echo "Wrong Argument"
-#   echo "type awesome.sh --help for help."
-#
-#   exit
-# fi
+if [ -z "$dir" ] || [ -z "$k" ];then
+  echo "Please enter both a valid directory and a maximum file size respectively."
+  echo "Or type awesome.sh --help for help."
+  exit
+fi
 
-if [[ ! -d "$dir"]]
+
+
+if [ ! -d "$dir" ];
   then
     echo "No such directory"
+    echo "Please enter both a valid directory and a maximum file size respectively."
     exit
 fi
 
-if [[ "$k" =~ ^-?[0-9]+$ ]]
-then
-  names=`ls -l $dir|awk -v k="$k" '$5 > k {print $NF}'|grep '[.]{1}'`
-  if [[ $names == "" ]]
-  then
-    echo "No file/folder that are larger than $k bytes."
-  fi
-  echo "${names[*]}"
-else
-  if [ $k == "--help" ]
+if [ $k == "--help" ]
   then
     echo "awesome.sh takes argument k, and return all directories that are larger than k bytes."
-  else
-    echo "Wrong Argument"
-    echo "type awesome.sh --help for help."
-  fi
+    exit
 fi
+
+names=`ls -l $dir|awk -v k="$k" '$5 > k {print $NF}'|grep '[.]'`
+if [[ $names == "" ]]
+then
+  echo "No file/folder that are larger than $k bytes."
+fi
+echo "${names[*]}"
