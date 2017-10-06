@@ -2,17 +2,34 @@
 
 fileName=$1
 
+#Check if recovered already exist.
+if [ ! -d "./recovered" ];
+then
+  echo `mkdir ./recovered`
+fi
 
-echo `rm -rf ./recovered/$fileName`
+#Check if such folder already exist.
+if [ ! -d "./recovered/$fileName" ];
+then
+  echo `mkdir ./recovered/$fileName`
 
-
+else
+  echo `find ./recovered/$fileNames -type f -delete`
+  #echo `rm -rf ./recovered/$fileNames`
+fi
 #get the list of file , sort it in order low to hi, get the last one(mose resent one)
 RecentFile=`ls /subm/u5881050/backups/ |cat|grep \^$fileName |cat| sort -n | tail -n1| cat`
-#echo "hi"
-#echo `$RecentFile`
-#echo "hi"
-echo `mkdir ./recovered/$fileName`
+
+
+if [[ -z $RecentFile ]]; then
+  echo "No such file in backups."
+  exit
+fi
+
+
+#copy all the content inside the latest folder
 echo `cp -r /subm/u5881050/backups/$RecentFile/* ./recovered/$fileName`
+
 
 #print
 echo "$fileName has been restored to ./recovered/$fileName"
