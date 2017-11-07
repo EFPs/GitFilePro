@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Boat/Desktop/FilePro/AHomework/GitFilePro/a2/ unscramble.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/Users/Boat/Desktop/FilePro/AHomework/GitFilePro/a2/tabutil.c
+
+/Users/Boat/Desktop/FilePro/AHomework/GitFilePro/a2/vert_hist.c
+

@@ -1,0 +1,3 @@
+/Users/Boat/Desktop/FilePro/AHomework/GitFilePro/a2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Boat/Desktop/FilePro/AHomework/GitFilePro/a2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Boat/Desktop/FilePro/AHomework/GitFilePro/a2/cmake-build-debug/CMakeFiles/a2.dir

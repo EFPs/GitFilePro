@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/a3_handout.dir/box/box.c.o CMakeFiles/a3_handout.dir/btree/btree.c.o CMakeFiles/a3_handout.dir/det/det.c.o CMakeFiles/a3_handout.dir/mergesort/mergesort.c.o CMakeFiles/a3_handout.dir/queue/queue.c.o  -o a3_handout 
